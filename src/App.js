@@ -24,8 +24,8 @@ function App() {
   const [usersCall, setUsersCall] = useState(true);
 
   let nodeAppUrl;
-  if (import.meta.env.MODE === "production") {
-    nodeAppUrl = import.meta.env.NODE_APP_PROD;
+  if (process.env.MODE === "production") {
+    nodeAppUrl = process.env.NODE_APP_PROD;
   } else {
     nodeAppUrl = process.env.NODE_APP_DEV;
   }
@@ -35,7 +35,7 @@ function App() {
   console.log(process.env.NODE_APP_PROD)
   console.log(process.env.MODE)
   console.log(process.env)
-  console.log(import.meta.env)
+  console.log(window._env_)
   console.log("Node APP URL----------")
 
   useEffect(() => {
