@@ -34,6 +34,7 @@ function App() {
   console.log(nodeAppUrl)
   console.log(process.env.NODE_APP_PROD)
   console.log(process.env.MODE)
+  console.log(process.env)
   console.log("Node APP URL----------")
 
   useEffect(() => {
