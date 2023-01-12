@@ -30,6 +30,10 @@ function App() {
     nodeAppUrl = process.env.NODE_APP_DEV;
   }
 
+  console.log("Node APP URL----------")
+  console.log(nodeAppUrl)
+  console.log("Node APP URL----------")
+
   useEffect(() => {
     if (usersCall) {
       axios.get(`${nodeAppUrl}/getAllUsers`).then((response) => {
