@@ -11,8 +11,6 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
-
-RUN npm run build
 # If you are building your code for production
 # RUN npm ci --only=production
 
@@ -24,4 +22,4 @@ ENV PORT 3000
 ENV MODE production
 
 EXPOSE 3000
-CMD [ "npm","start" ]
+CMD [ "npm run build","npm start" ]
