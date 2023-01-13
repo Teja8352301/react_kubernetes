@@ -1,0 +1,17 @@
+build
+coverage
+dist
+node_modules/
+package-lock.json
+fake-server/
+server/
+.yarn
+dist/
+*.config.js
+*.html
+*.md
+*.module.css
+*.json
+*.test.js
+services/
+test-report.xml
