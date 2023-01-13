@@ -22,23 +22,9 @@ export function App() {
 
   const [usersCall, setUsersCall] = useState(true);
 
-  let nodeAppUrl;
-  if (process.env.MODE === "production") {
-    nodeAppUrl = process.env.NODE_APP_PROD;
-  } else {
-    nodeAppUrl = process.env.NODE_APP_DEV;
-  }
-
-  console.log("Node APP URL----------")
-  console.log(nodeAppUrl)
-  console.log(process.env.NODE_APP_PROD)
-  console.log(process.env.MODE)
-  console.log(process.env)
-  console.log("Node APP URL----------")
-
   useEffect(() => {
     if (usersCall) {
-      axios.get(`${nodeAppUrl}/getAllUsers`).then((response) => {
+      axios.get(`/getAllUsers`).then((response) => {
         setUsersData(response.data);
         setUsersCall(false);
       });
@@ -52,7 +38,7 @@ export function App() {
   };
 
   const onSubmitHandler = () => {
-    axios.post(`${nodeAppUrl}/addUser`, fieldData).then(function (response) {
+    axios.post(`/addUser`, fieldData).then(function (response) {
       setUsersCall(true);
       setFieldData({
         name: "",
@@ -113,9 +99,6 @@ export function App() {
               key={row.name}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
               <TableCell align="right">{row.name}</TableCell>
               <TableCell align="right">{row.email}</TableCell>
               <TableCell align="right">{row.age}</TableCell>

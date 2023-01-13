@@ -12,6 +12,7 @@ const app = express();
 const {App} = require("../src/components/app");
 const bodyParser = require("body-parser");
 const logger = require("./logger");
+const router = require("./routes")
 
 const PORT = process.env.PORT || 9000;
 
@@ -36,6 +37,8 @@ app.get(
 );
 
 app.disable("etag");
+
+app.use(router)
 
 app.use("*", async (req, res) => {
   let componentData = {};
