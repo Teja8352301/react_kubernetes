@@ -22,4 +22,4 @@ ENV PORT 3000
 ENV MODE production
 
 EXPOSE 3000
-CMD [ "npm run build","npm start" ]
+CMD [ "npm run ssr" ]
